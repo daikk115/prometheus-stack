@@ -44,9 +44,12 @@ services:
     image: prom/node-exporter:latest
     container_name: lab_node_exporter
     restart: unless-stopped
+    network_mode: "host"
     command:
       - "--web.listen-address=localhost:9100"
-    network_mode: "host"
+      - "--collector.textfile.directory=/var/lib/node_exporter/textfile_collector"
+    volumes:
+      - /root/prometheus-stack/service_state:/var/lib/node_exporter/textfile_collector
 
 volumes:
   prom_data:

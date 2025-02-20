@@ -1,0 +1,7 @@
+# HELP my_custom_metric A sample custom metric
+# TYPE my_custom_metric gauge
+my_custom_metric 0
+
+# HELP my_custom_metric2 A sample custom metric
+# TYPE my_custom_metric2 gauge
+my_custom_metric2 0

@@ -1,5 +1,11 @@
 global:
   resolve_timeout: 5m
+  smtp_smarthost: 'smtp.gmail.com:587'
+  smtp_from: 'jackmaviet@gmail.com'
+  smtp_auth_username: 'jackmaviet@gmail.com'
+  smtp_auth_identity: 'jackmaviet@gmail.com'
+  smtp_auth_password: 'aydnrfsaaywgjfec'
+  smtp_require_tls: true
 
 route:
   receiver: 'default'
@@ -9,5 +15,20 @@ route:
 
 receivers:
   - name: 'default'
-    webhook_configs:
-      - url: 'https://webhook.site/9e616c9e-73c6-46d2-87b3-22471816aa47'
+    # email_configs:
+    #   - to: 'jackmaviet@gmail.com'
+    #     send_resolved: true
+    #     tls_config:
+    #       insecure_skip_verify: true
+    #     text: "{{ .CommonAnnotations.description }}"
+    #     headers:
+    #       subject: "[alerting][{{ .Status }}][{{ .GroupLabels.alertname }}]"
+
+    # telegram_configs:
+    #   - bot_token: "7686811854:AAFnGcjVNgpn8Eb37zY0Ln1HaV8hsF_C-8w"
+    #     api_url: "https://api.telegram.org"
+    #     chat_id: -1002491192686
+    #     parse_mode: ''
+
+    # webhook_configs:
+    #   - url: 'https://webhook.site/9e616c9e-73c6-46d2-87b3-22471816aa47'
